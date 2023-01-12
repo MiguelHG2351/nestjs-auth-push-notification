@@ -1,21 +1,19 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { UsersModule } from './modules/users/users.module';
-import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
-import { PagesModule } from './pages/pages.module';
+import { Module } from '@nestjs/common';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { UsersModule } from './modules/users/users.module';
+import { PagesModule } from './modules/pages/pages.module';
 
 @Module({
   imports: [
     ServeStaticModule.forRoot({
+      // render public in /public route
       rootPath: join(__dirname, '..', 'client', 'public'),
-      renderPath: '/public/',
+      // renderPath: '/public',
+      serveRoot: '/public',
     }),
     UsersModule,
     PagesModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
