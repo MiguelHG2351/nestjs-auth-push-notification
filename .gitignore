@@ -124,6 +124,7 @@ artifacts/
 *.vspscc
 *.vssscc
 .builds
+.turbo
 *.pidb
 *.svclog
 *.scc
