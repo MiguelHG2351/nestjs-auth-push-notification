@@ -1,15 +1,21 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { App } from 'firebase-admin/app';
+import { getAuth } from 'firebase-admin/auth';
 
 @Injectable()
 export class UsersService {
+  constructor(@Inject('FIREBASE_ADMIN') private firebase: App) {}
+
   create(createUserDto: CreateUserDto) {
     return 'This action adds a new user';
   }
 
   findAll() {
-    return `This action returns all users`;
+    const users = getAuth(this.firebase).listUsers();
+    console.log(`This action returns all users`);
+    return users;
   }
 
   findOne(id: number) {
