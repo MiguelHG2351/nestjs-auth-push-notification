@@ -1,0 +1,248 @@
+:root {
+  --dark-blue: #252329;
+  --dark-white: #e0e0e0;
+  --grayish-blue: #828282;
+  --grayish-white: #bdbdbd;
+  --light-blue: #2f80ed;
+  --soft-red: #eb5757;
+  --soft-blue: #2d9cdb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--dark-blue);
+}
+
+/* #region Header */
+
+.header-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+}
+
+.header-profile-action {
+  position: relative;
+}
+
+.header-profile-action:hover .header-profile-menu {
+  display: block;
+}
+
+.profile {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0 1rem;
+}
+
+.header-picture {
+  border-radius: 0.5rem;
+}
+
+.picture-title {
+  user-select: none;
+}
+
+.header-profile-menu {
+  display: none;
+  width: max-content;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding-top: 1rem;
+}
+
+.profile-menu-options {
+  border: 1px solid #333;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 0.75rem;
+  background-color: var(--dark-blue);
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem 0;
+}
+
+.profile-menu-link {
+  text-decoration: none;
+  color: var(--grayish-white);
+  font-size: 1rem;
+  padding: 0.5rem 0.25rem;
+  padding-right: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  line-height: 17.71px;
+  letter-spacing: -0.035em;
+}
+
+.profile-menu-link:hover {
+  background-color: var(--grayish-blue);
+  color: var(--dark-white);
+}
+
+.profile-menu-link:hover svg path {
+  fill: #fff;
+}
+
+.profile-menu-link svg {
+  margin-right: 0.25rem;
+}
+
+.profile-menu-link:last-child {
+  color: var(--soft-red);
+}
+
+.profile-menu-link:last-child:hover svg path {
+  fill: var(--soft-red);
+}
+
+.profile-menu-link:last-child:hover {
+  background-color: #eb57578f;
+}
+
+/* #endregion */
+.back-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.back-to-profile {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: var(--soft-blue);
+  margin-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle-page {
+  font-size: 0.75rem;
+}
+
+.content-page {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.change-photo-left {
+  display: flex;
+  align-items: center;
+  gap: 0 2rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--grayish-white);
+}
+
+.input-picture-container {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.input-picture-container img {
+  vertical-align: middle;
+}
+
+.bg-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+}
+
+.bg-photo svg {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2rem;
+  height: 2rem;
+  fill: #fff;
+}
+
+.bg-photo input {
+  opacity: 0;
+}
+
+.form-control {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem 0;
+  margin-bottom: 1rem;
+}
+
+.form-control textarea {
+  width: 100%;
+  resize: vertical;
+  font-family: "Noto Sans", sans-serif;
+  padding: 0.5rem;
+  border: 1px solid var(--grayish-white);
+  border-radius: 0.75rem;
+}
+
+.form-control input {
+  font-family: "Noto Sans", sans-serif;
+  width: 100%;
+  padding: 1rem;
+  font-size: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--grayish-white);
+}
+
+.send-btn {
+  border: none;
+  background-color: var(--soft-blue);
+  color: #fff;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 996px) {
+  .back-to-profile {
+    margin-left: -0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .content-page {
+    padding: 1rem 2rem;
+    border: 1px solid var(--grayish-white);
+    border-radius: .75rem;
+  }
+
+  .title-page {
+    font-weight: 400;
+  }
+
+  .form-container {
+    margin-top: 2rem;
+  }
+
+  .change-information {
+    margin-top: 3.5rem;
+  }
+
+  .send-btn {
+    width: max-content;
+  }
+}

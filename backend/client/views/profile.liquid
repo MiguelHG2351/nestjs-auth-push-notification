@@ -1,0 +1,70 @@
+{% block 'styles' %}
+  <link rel="stylesheet" href="/public/profile.css">
+{% endblock %}
+
+{% block 'content' %}
+  {% render 'header' %}
+  <div class="containter-profile">
+    <section class="content-profile">
+      <h1 class="profile-title">Personal info</h1>
+      <h2 class="profile-subtitle">Basic info, like your name and photo</h2>
+    </section>
+    <div class="container-action-data">
+      <div class="profile-action">
+        <div class="action-info">
+          <h3 class="action-title">Profile</h3>
+          <p class="action-description">
+            Some info may be visible to other people
+          </p>
+        </div>
+        <div class="action-edit">
+          <button class="btn-edit">Edit</button>
+        </div>
+      </div>
+      <ul class="profile-data">
+        <li class="data-item">
+          <span class="item-title">Photo</span>
+          <div class="item-data">
+            <img
+              width="72"
+              height="72"
+              src="https://randomuser.me/api/portraits/men/24.jpg"
+              alt="Imagen del usuario: " />
+          </div>
+        </li>
+        <li class="data-item">
+          <span class="item-title">Name</span>
+          <div class="item-data">
+            <span>
+              Xanthe Neal
+            </span>
+          </div>
+        </li>
+        <li class="data-item">
+          <span class="item-title">Bio</span>
+          <div class="item-data">
+            <span>
+              I am a software developer...
+            </span>
+          </div>
+        </li>
+        <li class="data-item">
+          <span class="item-title">Email</span>
+          <div class="item-data">
+            <span>
+              xanthe.neal@gmail.com
+            </span>
+          </div>
+        </li>
+        <li class="data-item">
+          <span class="item-title">Password</span>
+          <div class="item-data">
+            <span>
+              ************
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

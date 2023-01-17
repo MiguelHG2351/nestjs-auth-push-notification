@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{{title}}</title>
-</head>
-<body>
-  <h1>{{title}}</h1>
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    {% block styles %}{% endblock %}
+    {% block fonts %}{% endblock %}
+  </head>
+  <body>
+    {% block content %}{% endblock %}
 
-  {% block %}{% endblock %}
-
-  <footer> {% block footer %}{% endblock %} </footer>
-</body>
+    <footer>
+      {% block footer %}{% endblock %}
+    </footer>
+  </body>
 </html>

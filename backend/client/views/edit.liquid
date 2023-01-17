@@ -1,0 +1,75 @@
+{% layout 'layout' %}
+
+{% block 'styles' %}
+  <link rel="stylesheet" href="/public/edit.css">
+{% endblock %}
+
+{% block 'content' %}
+  {% render 'header' %}
+  <div class="back-container">
+    <a href="#" class="back-to-profile">
+      <svg
+        style="vertical-align: middle"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24"
+        width="24">
+        <path fill="#2D9CDB" d="m14 18-6-6 6-6 1.4 1.4-4.6 4.6 4.6 4.6Z" />
+      </svg>
+      Back
+    </a>
+  </div>
+  <section class="content-page">
+    <h1 class="title-page">Change info</h1>
+    <h3 class="subtitle-page">Changes will be reflected to every services</h3>
+    <form class="form-container">
+      <div class="change-photo">
+        <div class="change-photo-left">
+          <div class="input-picture-container">
+            <img
+              src="https://randomuser.me/api/portraits/men/84.jpg"
+              alt="Imagen del usuario: "
+              width="72" />
+            <div class="bg-photo">
+              <svg
+                style="vertical-align: middle"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                width="24">
+                <path fill="#fff" d="M12 17.5q1.875 0 3.188-1.312Q16.5 14.875 16.5 13q0-1.875-1.312-3.188Q13.875 8.5 12 8.5q-1.875 0-3.188 1.312Q7.5 11.125 7.5 13q0 1.875 1.312 3.188Q10.125 17.5 12 17.5ZM4 21q-.825 0-1.412-.587Q2 19.825 2 19V7q0-.825.588-1.412Q3.175 5 4 5h3.15L9 3h6l1.85 2H20q.825 0 1.413.588Q22 6.175 22 7v12q0 .825-.587 1.413Q20.825 21 20 21Z" />
+              </svg>
+              <input type="file" name="photo" />
+            </div>
+          </div>
+
+          <span>Change photo</span>
+        </div>
+      </div>
+      <div class="change-information">
+        <label class="form-control">
+          Name
+          <input type="text" placeholder="Enter your name...">
+        </label>
+        <label class="form-control">
+          Bio
+          <textarea
+            rows="5"
+            type="text"
+            placeholder="Enter your bio..."></textarea>
+        </label>
+        <label class="form-control">
+          Phone
+          <input type="number" placeholder="Enter your phone: 505yournumber...">
+        </label>
+        <label class="form-control">
+          Email
+          <input type="text" placeholder="Enter your Email...">
+        </label>
+        <label class="form-control">
+          Password
+          <input type="password" placeholder="Enter your password...">
+        </label>
+        <button class="send-btn" type="submit">Save</button>
+      </div>
+    </form>
+  </section>
+{% endblock %}

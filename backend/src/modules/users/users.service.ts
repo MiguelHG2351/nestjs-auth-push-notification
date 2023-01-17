@@ -3,12 +3,14 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { App } from 'firebase-admin/app';
 import { getAuth } from 'firebase-admin/auth';
-
 @Injectable()
 export class UsersService {
   constructor(@Inject('FIREBASE_ADMIN') private firebase: App) {}
 
-  create(createUserDto: CreateUserDto) {
+  async create(createUserDto: CreateUserDto) {
+    const auth = getAuth();
+    // auth.create
+
     return 'This action adds a new user';
   }
 

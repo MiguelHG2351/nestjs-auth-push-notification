@@ -1,13 +1,11 @@
 {% layout 'layout' %}
-<header>
-  
-</header>
-<ul>
-  {% for todo in todos %}
-    <li>{% include 'todo', id:forloop.index %}</li>
-  {% endfor %}
-</ul>
-
+{% block 'content' %}
+  <ul>
+    {% for todo in todos %}
+      <li>{% include 'todo', id: forloop.index %}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
 {% block 'footer' %}
   Copyright @ 2016, Harttle
 {% endblock %}
