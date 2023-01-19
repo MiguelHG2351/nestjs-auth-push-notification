@@ -179,6 +179,7 @@ input {
 }
 
 .btn-oauth {
+  cursor: pointer;
   padding: 0;
 }
 
@@ -211,11 +212,11 @@ input {
 }
 
 @media screen and (min-width: 768px) {
-  body {
+  /* body {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+  } */
 
   .main-auth {
     height: max-content;
